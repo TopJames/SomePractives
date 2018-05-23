@@ -39,6 +39,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb:2.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver:3.6.3" />
+          <element id="library" level="project" name="Maven: org.mongodb:bson:3.6.3" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:3.6.3" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-mongodb:2.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.4.RELEASE" />
