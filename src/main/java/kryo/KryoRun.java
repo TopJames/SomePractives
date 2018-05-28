@@ -8,6 +8,7 @@ import kryo.entity.User;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 /**
  * Created by Zhan on 2018/5/24.
@@ -17,12 +18,14 @@ public class KryoRun {
 
         User user=new User("tony","98","500cm");
 
+        String name="Tom";
+
         Kryo kryo=new Kryo();
         kryo.setReferences(false);
-        kryo.register(user.getClass(),new JavaSerializer());
+   //     kryo.register(name.getClass(),new JavaSerializer());
         ByteArrayOutputStream baos=new ByteArrayOutputStream();
         Output output=new Output(baos);
-        kryo.writeClassAndObject(output,user);
+        kryo.writeClassAndObject(output,name);
         output.flush();
         output.close();
         byte[] bytArray=baos.toByteArray();
@@ -31,9 +34,18 @@ public class KryoRun {
 
         ByteArrayInputStream bais=new ByteArrayInputStream(bytArray);
         Input input=new Input(bais);
-        User user2=(User) kryo.readClassAndObject(input);
+     //   User user2=(User) kryo.readClassAndObject(input);
+        String name2=(String) kryo.readClassAndObject(input);
 
-        System.out.println(user2);
+        System.out.println(name2);
+
+        try {
+            baos.flush();
+            baos.close();
+            bais.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
 
