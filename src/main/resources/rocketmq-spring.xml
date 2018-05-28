@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="producer" class="com.alibaba.rocketmq.client.producer.TransactionMQProducer">
+        <constructor-arg name="producerGroup" value="transaction-pay" />
+        <property name="namesrvAddr" value="192.168.0.127:9876"/>
+        <property name="checkThreadPoolMinSize" value="5"/>
+        <property name="checkThreadPoolMaxSize" value="20"/>
+        <property name="checkRequestHoldMax" value="2000"/>
+        <property name="transactionCheckListener" ref="producerlistener"/>
+    </bean>
+
+    <bean id="producerlistener" class="rocketmq.boot.listener.Listener1" />
+
+    <bean id="consumer" class="com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer">
+        <constructor-arg name="consumerGroup" value="transaction-balance"/>
+        <property name="namesrvAddr" value="192.168.0.127:9876"/>
+        <property name="consumeFromWhere" value="CONSUME_FROM_LAST_OFFSET"/>
+
+    </bean>
+
+</beans>
