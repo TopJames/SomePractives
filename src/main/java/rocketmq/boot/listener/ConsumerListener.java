@@ -23,7 +23,7 @@ public class ConsumerListener implements MessageListenerConcurrently {
             String keys = msg.getKeys();
 
             System.out.println("balance服务收到消息, keys : " + keys + ", body : " + new String(msg.getBody(), "utf-8")+
-                "queue:"+msg.getQueueId()
+                ",queue:"+msg.getQueueId()+",tags:"+msg.getTags()+",topic:"+topic
             );
             //userid
 //            String userid = messageBody.getString("userid");

@@ -68,6 +68,11 @@
   </dependencies>
 
   <repositories>
+    <repository>
+      <id>central</id>
+      <name>Maven Repository Switchboard</name>
+      <url>http://repo1.maven.org/maven2/</url>
+    </repository>
       <repository>
         <id>ibiblio</id>
         <name>Human Readable Name for this Mirror.</name>
@@ -84,11 +89,7 @@
         <name>oneof the central mirrors in china</name>
         <url>http://maven.net.cn/content/groups/public/</url>
       </repository>
-      <repository>
-        <id>central</id>
-        <name>Maven Repository Switchboard</name>
-        <url>http://repo1.maven.org/maven2/</url>
-      </repository>
+
       <repository>
         <id>repo2</id>
         <name>Human Readable Name for this Mirror.</name>
