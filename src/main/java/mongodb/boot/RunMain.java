@@ -13,6 +13,7 @@ import java.util.Map;
  */
 public class RunMain {
     public static void main(String[] args) {
+        System.out.println(System.currentTimeMillis());
         MongoClient mongoClient = new MongoClient( "192.168.129.3" , 27017 );
 
         MongoDatabase mongoDatabase = mongoClient.getDatabase("demoDB");
