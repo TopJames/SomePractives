@@ -15,6 +15,10 @@ public class Run2 {
         Jedis jedis=new Jedis("192.168.129.3",6379);
         System.out.println("service status:"+jedis.ping());
 
+
+        long temp=jedis.zcard("ddddd");
+
+
         Pipeline pp=jedis.pipelined();
         pp.multi();
         pp.zadd("demoset",1,"11");

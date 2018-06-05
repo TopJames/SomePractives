@@ -2,6 +2,7 @@ package redis;
 
 import kryo.util.SerializeUtil;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Pipeline;
 import redis.entities.User;
 
 import java.io.UnsupportedEncodingException;
@@ -18,8 +19,9 @@ public class Run1 {
 //        String val="val";
 //        jedis.set(SerializeUtil.serializeObj(key1),SerializeUtil.serializeObj(val));
 //        System.out.println(SerializeUtil.deSerialize(jedis.get(SerializeUtil.serializeObj(key2)),String.class));
+        Pipeline pp=jedis.pipelined();
         long startTime=System.currentTimeMillis();
-        for(int i=0;i<1000;i++){
+        for(int i=0;i<10000;i++){
 //            User user=new User();
 //            String key="user";
 //        jedis.set("test1","test1value");
@@ -33,13 +35,15 @@ public class Run1 {
 //            System.out.println("user info: "+userObj.toString());
 
 
-            jedis.set("a","r");
-            jedis.get("a");
+//            pp.set("a","r");
+//            pp.get("a");
 
-//            jedis.set(SerializeUtil.serializeObj("a"),SerializeUtil.serializeObj("r"));
-//            jedis.get(SerializeUtil.serializeObj("a"));
+            pp.set(SerializeUtil.serializeObj("a"),SerializeUtil.serializeObj("r"));
+            pp.get(SerializeUtil.serializeObj("a"));
 
         }
+        pp.sync();
+
         long endTime=System.currentTimeMillis()-startTime;
         System.out.println("last time(second):"+endTime);
     }
