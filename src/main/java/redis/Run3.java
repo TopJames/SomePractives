@@ -27,6 +27,7 @@ public class Run3 {
             ptd.getPrintableTicketcouopnList().add(ptc);
             dataList1.add(ptd);
         }
+
         InvoiceRedisHelper.saveInvoiceData("invoiceKey",dataList1);
 
 //        List<PrintableTicketDto> dataList2=InvoiceRedisHelper.getNextPages("invoiceKey",2,4);
