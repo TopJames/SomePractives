@@ -25,14 +25,15 @@ public class Run3 {
             PrintableTicketCouopn ptc=new PrintableTicketCouopn();
             ptc.setFlightDate("2018-12-1"+i);
             ptd.getPrintableTicketcouopnList().add(ptc);
+            ptd.setAmount("50"+i);
             dataList1.add(ptd);
         }
 
         InvoiceRedisHelper.saveInvoiceData("invoiceKey",dataList1);
 
 //        List<PrintableTicketDto> dataList2=InvoiceRedisHelper.getNextPages("invoiceKey",2,4);
-//        Object[] objArray=InvoiceRedisHelper.getPages("invoiceKey",3,4);
-        Object[] objArray=InvoiceRedisHelper.getPageByName("invoiceKey","tom",1,2);
+        Object[] objArray=InvoiceRedisHelper.getPages("invoiceKey",3,4);
+//        Object[] objArray=InvoiceRedisHelper.getPageByName("invoiceKey","jim",1,2);
         List<PrintableTicketDto> dataList2=(List<PrintableTicketDto>)objArray[0];
         for(PrintableTicketDto ptd:dataList2){
             System.out.println("tickno:"+ptd.getTicketNo());
