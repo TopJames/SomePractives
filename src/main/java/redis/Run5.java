@@ -13,6 +13,7 @@ public class Run5 {
     public static void main(String[] args) {
         String key="invoiceKey";
         List<String> ticketList=new ArrayList<>();
+        ticketList.stream().forEach(s -> System.out.println(s));
         ticketList.add("789");
         ticketList.add("789");
         ticketList.add("787");
