@@ -1,0 +1,16 @@
+message User{
+
+    //id 必填
+    required int32 id = 1;
+
+    //name
+    required string name = 2;
+
+    //可选
+    optional string phone = 3;
+
+    //集合
+    repeated string friends = 4;
+
+
+}
