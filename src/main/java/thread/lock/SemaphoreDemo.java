@@ -23,8 +23,9 @@ public class SemaphoreDemo {
                 e.printStackTrace();
             }
 //            semaphore.release();
-            semaphore.release();
-            semaphore.release();
+//            semaphore.release();
+//            semaphore.release();
+            semaphore.release(2);
         });
         Thread t2=new Thread(()->{
             try {
