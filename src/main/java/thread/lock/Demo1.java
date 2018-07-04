@@ -10,11 +10,11 @@ public class Demo1 {
 
         Thread t1=new Thread(()->{
 //            Demo1.doing();
-            Demo1.doing2();
+            Demo1.doing();
         },"t1");
         Thread t2=new Thread(()->{
 //            Demo1.doing();
-            Demo1.doing2();
+            Demo1.doing();
         },"t2");
         t1.start();
         t2.start();
