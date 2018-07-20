@@ -85,6 +85,41 @@
       <artifactId>icepdf-core</artifactId>
       <version>4.3.2</version>
     </dependency>
+    <dependency>
+      <groupId>us.codecraft</groupId>
+      <artifactId>webmagic-core</artifactId>
+      <version>0.7.3</version>
+    </dependency>
+    <dependency>
+      <groupId>us.codecraft</groupId>
+      <artifactId>webmagic-extension</artifactId>
+      <version>0.7.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+    </dependency>
   </dependencies>
 
   <repositories>
@@ -94,27 +129,27 @@
       <url>http://repo1.maven.org/maven2/</url>
     </repository>
       <repository>
-        <id>ibiblio</id>
-        <name>Human Readable Name for this Mirror.</name>
-        <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
-      </repository>
-      <repository>
         <id>jboss-public-repository-group</id>
         <name>JBoss Public Repository Group</name>
         <url>http://repository.jboss.org/nexus/content/groups/public</url>
       </repository>
-      <!-- 中央仓库在中国的镜像 -->
-      <repository>
+    <!-- 中央仓库在中国的镜像 -->
+    <repository>
         <id>maven.net.cn</id>
         <name>oneof the central mirrors in china</name>
         <url>http://maven.net.cn/content/groups/public/</url>
       </repository>
 
-      <repository>
+    <repository>
         <id>repo2</id>
         <name>Human Readable Name for this Mirror.</name>
         <url>http://repo2.maven.org/maven2/</url>
       </repository>
+    <repository>
+      <id>ibiblio</id>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+    </repository>
   </repositories>
 
 
