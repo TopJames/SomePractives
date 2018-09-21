@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
+    <script type="text/javascript" src="../common/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $("button").on("click", function(){
+                var formData = new FormData(document.getElementById("tf"));
+//                formData.append("file", $("#file")[0].files);
+//                formData.append("token", $("#token").val());
+                $.ajax({
+                    url: "http://127.0.0.1:8888/upload",
+                    type: "POST",
+                    async: false,
+                    data: formData,
+                    dataType:"text",
+                    processData: false,
+                    contentType: false,
+                    success: function(data){
+                        alert(data);
+                    },
+                    error: function(response){
+                        alert('yoyo');
+                    }
+                });
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <form id="tf">
+        <input id="file1" name="file" type="file" multiple />
+        <input id="file2" name="dirs" type="file" webkitdirectory >
+        <input id="token" name="token" type="hidden" />
+        <button id="upload">button</button>
+    </form>
+</body>
+</html>
